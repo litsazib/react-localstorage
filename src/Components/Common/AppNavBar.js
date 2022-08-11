@@ -15,6 +15,7 @@ const AppNavBar = () => {
                         <Nav className="me-auto">
                             <Nav.Link><NavLink to="/">TO-Do List</NavLink></Nav.Link>
                             <Nav.Link><NavLink to="/create">Create Todo</NavLink></Nav.Link>
+                            <Nav.Link><NavLink to="/text-detection">Text Detection</NavLink></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -5,6 +5,7 @@ import ReadPage from "./Pages/ReadPage";
 import CreatePage from "./Pages/CreatePage";
 import UpdatePage from "./Pages/UpdatePage";
 import ViewPage from "./Pages/ViewPage";
+import TextDetectionPage from './Pages/TextDetectionPage';
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
                     <Route exact path="/create" render={(props)=><CreatePage {...props} key={Date.now()} />}/>
                     <Route exact path="/update/:id" render={(props)=><UpdatePage {...props} key={Date.now()} />}/>
                     <Route exact path="/view/:id" render={(props)=><ViewPage {...props} key={Date.now()} />}/>
+                    <Route exact path="/text-detection" render={(props)=><TextDetectionPage {...props} key={Date.now()} />}/>
                 </Switch>
             </BrowserRouter>
         </Fragment>
