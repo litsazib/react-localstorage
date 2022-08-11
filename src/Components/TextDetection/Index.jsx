@@ -61,7 +61,7 @@ const Index=()=> {
                               <div className="display-flex">
                                 <img src={imageData} width={"500px"} alt=""/>
                                 <h3 className='d-none redColor isLoading'>
-                                  <span className='lblTag'>loading....</span>
+                                  <span className='redColor'>loading....</span>
                                   </h3>
                                 <p className='generateTxt'>{ocr}</p>
                               </div>

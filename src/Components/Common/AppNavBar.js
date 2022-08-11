@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,memo} from 'react';
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
 import logo from "../../Assets/img/logo.svg"
@@ -8,7 +8,7 @@ const AppNavBar = () => {
             <Navbar  bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand>
-                        <NavLink to="/"><img className="nav-logo" src={logo} alt="logo"/> </NavLink>
+                        <Nav.Link to="/"><img className="nav-logo" src={logo} alt="logo"/> </Nav.Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
@@ -24,4 +24,4 @@ const AppNavBar = () => {
     );
 };
 
-export default AppNavBar;
+export default memo(AppNavBar);
