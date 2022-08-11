@@ -1,10 +1,13 @@
 import React, {Fragment,useState} from 'react';
 import { createWorker } from "tesseract.js";
+import {TextToSpece} from '../../Helper/ValidationHelper'
 import {withRouter} from "react-router";
 
 const Index=()=> {
+
   const [ocr, setOcr] = useState("");
   const [imageData, setImageData] = useState(null);
+
   const worker = createWorker({
     logger: (m) => {
       console.log(m);
@@ -23,9 +26,9 @@ const Index=()=> {
     } = await worker.recognize(imageData);
     setOcr(text);
     isLoading.classList.add('d-none')
-  };
+  }
 
-  function handleImageChange(e) {
+  const handleImageChange = (e)=> {
     const file = e.target.files[0];
     if(!file)return;
     const reader = new FileReader();
@@ -35,6 +38,10 @@ const Index=()=> {
     };
     reader.readAsDataURL(file);
   }
+  const Voice = (e)=>{
+    TextToSpece(ocr)
+  }
+
 
   return (
     <Fragment>
@@ -62,6 +69,7 @@ const Index=()=> {
                             <div className="row">
                                 <div className="col-md-4  m-auto p-2">
                                     <button onClick={convertImageToText} className="btn btn-primary  animated fadeInUp w-100">Convert Image-To-TEXT</button>
+                                    <button onClick={Voice} className="btn btn-success  animated fadeInUp w-100">Convert Voice</button>
                                 </div>
                             </div>
                         </div>

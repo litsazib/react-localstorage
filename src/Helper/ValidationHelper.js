@@ -35,9 +35,14 @@ class ValidationHelper{
          return str = str.substring(0,max_chars);
         }
     }
+    TextToSpece(text) {
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = text
+        return window.speechSynthesis.speak(msg);
+    }
     
 
 
 }
 
-export const {isEmpty,SuccessToast,ErrorToast,AutoNumber,getBase64,limit}=new ValidationHelper();
+export const {isEmpty,SuccessToast,ErrorToast,AutoNumber,getBase64,limit,TextToSpece}=new ValidationHelper();
