@@ -14,7 +14,7 @@ const ListTable = (props) => {
         DeleteLocalStorage(id)
         if(true){
             SuccessToast("Delete Success")
-            props.history.push("/")
+            props.history.push("/read")
         }
         else{
             ErrorToast("Something wrong!");

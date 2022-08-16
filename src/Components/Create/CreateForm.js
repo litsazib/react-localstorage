@@ -29,7 +29,7 @@ const CreateForm = (props) => {
         if(true){
             Loader.classList.add("d-none")
             SuccessToast("Data Save Success");
-            props.history.push("/");
+            props.history.push("/read");
         }
         else {
             ErrorToast("Request Fail Try Again");

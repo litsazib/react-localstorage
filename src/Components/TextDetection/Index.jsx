@@ -1,5 +1,5 @@
 import React, {Fragment,useState} from 'react';
-import { createWorker } from "tesseract.js";
+import { createWorker,PSM } from "tesseract.js";
 import {TextToSpece} from '../../Helper/ValidationHelper'
 import {withRouter} from "react-router";
 
@@ -21,6 +21,9 @@ const Index=()=> {
     await worker.load();
     await worker.loadLanguage("eng");
     await worker.initialize("eng");
+    await worker.setParameters({
+    tessedit_pageseg_mode: PSM.SINGLE_BLOCK,
+    });
     const {
       data: { text },
     } = await worker.recognize(imageData);

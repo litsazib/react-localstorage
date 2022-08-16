@@ -29,7 +29,7 @@ const UpdateForm = (props) => {
             UpdateLocalStorage(props.id,payload)
             if(true){
                 SuccessToast("Data Udpate Success")
-                props.history.push("/");
+                props.history.push("/read");
             }
             else {
                 ErrorToast("Request Fail Try Again");
